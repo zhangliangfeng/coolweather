@@ -96,7 +96,7 @@ public class ShopAllActivity extends Activity implements OnItemClickListener{
 		    public void onSuccess(List<Shop> object) {
 		        //toast("查询成功. 共计" + object.size());
 		    	if(object.size()==0)
-		    		toast("亲, 还没开张, 耐心等待吧");
+		    		toast("亲, 你来得太早了点哦");
 		        shopList = object;
 		        // 通知Adapter数据更新
 		        shopListAdapter.refresh((ArrayList<Shop>) shopList);
