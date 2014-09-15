@@ -1,20 +1,17 @@
 package com.stone.shop.view;
 
-import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.listener.InsertListener;
-
-import com.stone.shop.R;
-import com.stone.shop.model.FeedBack;
-import com.stone.shop.model.User;
-
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.listener.SaveListener;
+
+import com.stone.shop.R;
+import com.stone.shop.model.FeedBack;
 /**
  * 意见反馈界面
  * @date 2014-5-27
@@ -54,7 +51,7 @@ public class FeedBackActivity extends Activity implements OnClickListener{
 			fb.setUsername(user.getUsername());
 			fb.setEmail(user.getEmail());
 			fb.setContent(content);
-			fb.insertObject(this, new InsertListener() {
+			fb.save(this, new SaveListener() {
 				
 				@Override
 				public void onSuccess() {
@@ -63,9 +60,10 @@ public class FeedBackActivity extends Activity implements OnClickListener{
 				}
 				
 				@Override
-				public void onFailure(String arg0) {
+				public void onFailure(int arg0, String msg) {
 					toast("提交失败");
 				}
+				
 			});
 			
 		}

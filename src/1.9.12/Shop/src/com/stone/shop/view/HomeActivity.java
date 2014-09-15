@@ -181,6 +181,7 @@ public class HomeActivity extends Activity implements OnClickListener,
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		Intent toNewsDetail = new Intent(HomeActivity.this, NewsActivity.class);
+		toNewsDetail.putExtra("NewsID", newsList.get(position).getObjectId());
 		toNewsDetail.putExtra("NewsTitle", newsList.get(position).getTitle());
 		toNewsDetail.putExtra("NewsAuthor", newsList.get(position).getAuthor());
 		toNewsDetail.putExtra("NewsTime", newsList.get(position).getCreatedAt());

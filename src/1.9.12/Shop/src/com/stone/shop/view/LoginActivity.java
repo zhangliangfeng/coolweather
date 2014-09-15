@@ -26,7 +26,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import cn.bmob.v3.Bmob;
-import cn.bmob.v3.listener.InsertListener;
+import cn.bmob.v3.listener.SaveListener;
 
 import com.stone.shop.R;
 import com.stone.shop.model.User;
@@ -322,7 +322,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 				User bu2 = new User();
 				bu2.setUsername(username);
 				bu2.setPassword(password);
-				bu2.login(this, new InsertListener() {
+				bu2.login(this, new SaveListener() {
 					@Override
 					public void onSuccess() {
 						toast("亲, 小菜来罗~");
@@ -336,7 +336,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 					}
 
 					@Override
-					public void onFailure(String msg) {
+					public void onFailure(int arg0, String msg) {
 						toast("亲, 用户名或密码错误");
 					}
 				});

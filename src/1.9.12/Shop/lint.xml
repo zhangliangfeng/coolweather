@@ -15,6 +15,10 @@
     </issue>
     <issue id="DuplicateIds">
         <ignore path="res/layout/activity_mine_info.xml" />
+        <ignore path="res/layout/second_trade_all_list_item.xml" />
+    </issue>
+    <issue id="HandlerLeak">
+        <ignore path="src/com/stone/shop/view/NewsActivity.java" />
     </issue>
     <issue id="HardcodedText">
         <ignore path="res/layout/activity_about.xml" />
@@ -42,6 +46,7 @@
         <ignore path="res/layout/mine_list_item.xml" />
         <ignore path="res/layout/news_list_item.xml" />
         <ignore path="res/layout/order_info_list_item.xml" />
+        <ignore path="res/layout/second_trade_all_list_item.xml" />
         <ignore path="res/layout/shop_all_list_item.xml" />
         <ignore path="res/layout/viewpager_shopinfo.xml" />
     </issue>

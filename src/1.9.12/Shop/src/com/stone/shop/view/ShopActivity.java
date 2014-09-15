@@ -9,14 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -93,19 +87,31 @@ public class ShopActivity extends Activity implements  OnItemClickListener{
 			}
 			
 			break;
-		//点击 吃饭小菜 中的子项
+			
+		//-------------------------------------------------------------------------------
+			
+		//小菜点餐
 		case R.id.gv_food_class:
 			toShopAllActivity( GridAdapter.mFoodTexts[position], "2"+(position+1) );
 			break;
-		//点击 购物小菜 中的子项
+			
+		//校园服务
 		case R.id.gv_gift_class:
+			Intent intent = new Intent();
 			if(position==0) {
-				Intent toBXTActivity = new Intent(ShopActivity.this, BXTActivity.class);
-				startActivity(toBXTActivity);
+				intent = new Intent(ShopActivity.this, BXTActivity.class);
+				startActivity(intent);
+			} else if(position==5) {
+				intent = new Intent(ShopActivity.this, SecondTradeActivity.class);
+				intent.putExtra("title", "二手交易");
+				startActivity(intent);
 			} else {
 				toShopAllActivity( GridAdapter.mGiftTexts[position], "3"+(position+1) );
 			}
 			break;
+		//-------------------------------------------------------------------------------	
+			
+			
 		//点击 疯狂小菜 中的子项
 		case R.id.gv_out_class:
 			toShopAllActivity( GridAdapter.mOutTexts[position], "4"+(position+1) );
@@ -121,7 +127,6 @@ public class ShopActivity extends Activity implements  OnItemClickListener{
 	};
 	
 	/**
-	 * 
 	 * @param title		父分类标题
 	 * @param type		
 	 */

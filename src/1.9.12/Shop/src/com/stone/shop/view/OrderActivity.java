@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -14,15 +13,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.listener.InsertListener;
+import cn.bmob.v3.listener.SaveListener;
 
 import com.stone.shop.R;
 import com.stone.shop.model.Good;
 import com.stone.shop.model.Order;
 import com.stone.shop.model.Shop;
-import com.stone.ui.DialogOrder;
 import com.stone.util.Util;
 
 /**
@@ -180,7 +177,7 @@ public class OrderActivity extends Activity implements OnClickListener{
 			order.setPrice(price+"");
 			order.setPhone(phone);
 			order.setTips(words);
-			order.insertObject(this, new InsertListener() {
+			order.save(this, new SaveListener() {
 				
 				@Override
 				public void onSuccess() {
@@ -188,7 +185,7 @@ public class OrderActivity extends Activity implements OnClickListener{
 				}
 				
 				@Override
-				public void onFailure(String arg0) {
+				public void onFailure(int arg0, String arg1) {
 					toast("订单提交失败");
 				}
 			});

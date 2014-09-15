@@ -8,6 +8,7 @@
 	<classpathentry kind="lib" path="libs/android-support-v4.jar"/>
 	<classpathentry kind="lib" path="libs/open_sdk.jar"/>
 	<classpathentry kind="lib" path="libs/mta-sdk-1.0.0.jar"/>
-	<classpathentry kind="lib" path="libs/bmob_v3.1.0beta.jar"/>
+	<classpathentry kind="lib" path="libs/bmobsdk_v3.2.2.jar"/>
+	<classpathentry kind="lib" path="libs/bmobPush_0.3_beta.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

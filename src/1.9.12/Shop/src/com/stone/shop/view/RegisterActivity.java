@@ -1,12 +1,5 @@
 package com.stone.shop.view;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import com.stone.shop.R;
-import com.stone.shop.model.User;
-import com.stone.util.Util;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +8,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import cn.bmob.v3.listener.InsertListener;
+import cn.bmob.v3.listener.SaveListener;
+
+import com.stone.shop.R;
+import com.stone.shop.model.User;
+import com.stone.util.Util;
 
 /**
  * 注册界面
@@ -75,7 +72,7 @@ public class RegisterActivity extends Activity implements OnClickListener {
 				bu.setUsername(username);
 				bu.setPassword(password);
 				bu.setPhone(phone);
-				bu.signUp(this, new InsertListener() {
+				bu.signUp(this, new SaveListener() {
 					@Override
 					public void onSuccess() {
 						toast("亲, 小菜拿到身份证了, 一起登陆辽宁号去吧");
@@ -86,9 +83,10 @@ public class RegisterActivity extends Activity implements OnClickListener {
 					}
 
 					@Override
-					public void onFailure(String msg) {
+					public void onFailure(int arg0, String msg) {
 						toast("亲, 被人捷足先登了, 换个名字吧.");
 					}
+
 				});
 			}
 			break;

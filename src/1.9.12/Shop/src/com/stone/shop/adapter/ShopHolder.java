@@ -12,5 +12,5 @@ public class ShopHolder {
 	public TextView tvShopName;
 	public TextView tvShopType;
 	public TextView tvShopLoc;
-
+	
 }
