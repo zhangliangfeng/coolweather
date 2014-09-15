@@ -48,6 +48,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.stone.shop.view.ResetPsdActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
             android:name="com.stone.shop.view.BaseActivity"
             android:label="@string/app_name" >
         </activity>

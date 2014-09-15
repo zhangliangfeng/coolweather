@@ -73,29 +73,10 @@ public class MineInfoActivity extends Activity {
 		tvDorNum.setText(curUser.getDorNum());
 		tvPhone.setText(curUser.getPhone());
 		tvQQ.setText(curUser.getQQ());
-		
 	}
 	
 	private void getCurUser() {
-		BmobUser bmobUser = BmobUser.getCurrentUser(this);
-		BmobQuery<User> query = new BmobQuery<User>();
-		query.addWhereEqualTo("objectId", bmobUser.getObjectId());
-		query.findObjects(this, new FindListener<User>() {
-			
-			@Override
-			public void onSuccess(List<User> object) {
-				curUser = object.get(0);
-				Message msg = new Message();
-				msg.what = MessageDef.MINE_INFO_FINISH_FIND_USER;
-				mHandler.sendMessage(msg);
-			}
-
-			@Override
-			public void onError(int arg0, String arg1) {
-				toast("亲， 获取当前用户失败");
-			}
-		});
-		
+		curUser = BmobUser.getCurrentUser(this,User.class);
 	}
 	
 	public void clickEdit(View v) {

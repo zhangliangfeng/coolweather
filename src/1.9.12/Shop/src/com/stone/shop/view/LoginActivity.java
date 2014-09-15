@@ -49,6 +49,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 
 	private Button btnLogin;
 	private Button btnReg;
+	private Button btnResetPsd;
 	private EditText etUsername;
 	private EditText etPassword;
 
@@ -94,12 +95,14 @@ public class LoginActivity extends Activity implements OnClickListener{
 
 		btnLogin = (Button) findViewById(R.id.btn_login);
 		btnReg = (Button) findViewById(R.id.btn_register);
+		btnResetPsd = (Button) findViewById(R.id.btn_reset_psd);
 
 		etUsername = (EditText) findViewById(R.id.et_username);
 		etPassword = (EditText) findViewById(R.id.et_password);
 
 		btnLogin.setOnClickListener(this);
 		btnReg.setOnClickListener(this);
+		btnResetPsd.setOnClickListener(this);
 		
 		mUserInfo = (TextView) findViewById(R.id.user_nickname);  
         mUserLogo = (ImageView) findViewById(R.id.user_logo);  
@@ -338,6 +341,11 @@ public class LoginActivity extends Activity implements OnClickListener{
 					}
 				});
 			}
+			break;
+			
+		case R.id.btn_reset_psd:
+			Intent toResetPsdActivity = new Intent(LoginActivity.this, ResetPsdActivity.class);
+			startActivity(toResetPsdActivity);
 			break;
 
 		case R.id.btn_register:

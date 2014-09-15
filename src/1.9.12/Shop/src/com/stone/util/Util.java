@@ -36,6 +36,18 @@ public class Util {
 		}
 		return isValid;
 	}
+	
+	/**
+	 * 判断邮箱地址是否有效
+	 * 
+	 * @param email
+	 * @return true 有效 / false 无效
+	 */
+	public static boolean isEmailValid(String email)
+	{
+		String regex = "\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+        return email.matches(regex);
+	}
 
 	// 判断网络是否连接
 	public static boolean isNetworkConnected(Context context) {

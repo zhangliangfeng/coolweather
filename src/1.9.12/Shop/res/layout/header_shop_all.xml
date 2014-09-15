@@ -15,15 +15,5 @@
         android:textSize="20sp"
         android:textColor="#8B4513"
         android:typeface="monospace"/>
-    
-    <ImageView 
-        android:id="@+id/img_search"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/ic_search"/>
-    
-    
 
 </RelativeLayout>
