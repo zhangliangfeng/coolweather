@@ -34,8 +34,7 @@ public class MineInfoActivity extends Activity {
 	private TextView tvPhone;
 	private TextView tvQQ;
 	
-	private User curUser = new User();
-	
+	private User curUser ;
 	private Handler mHandler = new Handler() {  
 		  @Override  
 		  public void handleMessage(Message msg) {  
@@ -76,7 +75,19 @@ public class MineInfoActivity extends Activity {
 	}
 	
 	private void getCurUser() {
-		curUser = BmobUser.getCurrentUser(this,User.class);
+		curUser = BmobUser.getCurrentUser(this, User.class);
+		if(curUser!=null)
+		{
+			Message msg = new Message();
+			msg.what = MessageDef.MINE_INFO_FINISH_FIND_USER;
+			mHandler.sendMessage(msg);
+		}
+	}
+	
+	private void refresh()
+	{
+		getCurUser();
+		initView();
 	}
 	
 	public void clickEdit(View v) {
@@ -90,7 +101,7 @@ public class MineInfoActivity extends Activity {
 //		bundle.putString("phone", curUser.getPhone());
 //		bundle.putString("qq", curUser.getQQ());
 //		toEditMineInfo.putExtras(bundle);
-		startActivity(toEditMineInfo);
+		startActivityForResult(toEditMineInfo, 200);
 	}
 	
 	public void clickBack(View v) {
@@ -101,5 +112,12 @@ public class MineInfoActivity extends Activity {
 		Toast.makeText(this, toast, Toast.LENGTH_SHORT).show();
 	}
 	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		//super.onActivityResult(requestCode, resultCode, data);
+		if(requestCode == 200) {
+             refresh();
+        }
+	}
 	
 }

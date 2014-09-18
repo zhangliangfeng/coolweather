@@ -3,6 +3,15 @@ package com.stone.shop.view;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.listener.FindListener;
 
@@ -10,18 +19,6 @@ import com.ad.android.sdk.api.AdSdk;
 import com.stone.shop.R;
 import com.stone.shop.adapter.BXTListAdapter;
 import com.stone.shop.model.BXTNews;
-import com.stone.shop.model.BXTNews;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.renderscript.Element;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 /**
  * 教学类-博学堂界面
@@ -96,7 +93,7 @@ public class BXTActivity extends Activity implements OnItemClickListener {
 			}
 		});
 	}
-
+	
 	private void toast(String toast) {
 		Toast.makeText(this, toast, Toast.LENGTH_SHORT).show();
 	}

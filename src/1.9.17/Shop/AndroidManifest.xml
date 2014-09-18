@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.stone.shop"
-    android:versionCode="5"
+    android:versionCode="6"
     android:versionName="Beta 1.9.17" >
 
     <uses-sdk
@@ -17,7 +17,9 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    
+    <meta-data android:value="Channel ID" android:name="BMOB_CHANNEL"/>
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_app"
@@ -44,13 +46,23 @@
         -->
         <!-- ********************************QQ登陆配置*********************************** -->
         <activity
-            android:name="com.stone.shop.view.LoginActivity"
+            android:name="com.stone.shop.view.SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        
+        <!-- ***************************** Bmob自动更新组件 *************************** -->
+        <activity 
+            android:name="cn.bmob.v3.update.UpdateDialogActivity"
+              android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <!-- **************************************************************************** -->
+        <activity
+            android:name="com.stone.shop.view.LoginActivity"
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name="com.stone.shop.view.ResetPsdActivity"

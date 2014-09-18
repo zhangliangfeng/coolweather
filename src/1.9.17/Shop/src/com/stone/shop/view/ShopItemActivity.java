@@ -115,10 +115,23 @@ public class ShopItemActivity extends Activity implements OnClickListener, OnIte
 		viewList.add(view2);
 
 		titleList = new ArrayList<String>();// 每个页面的Title数据
-		titleList.add("商品");
-		titleList.add("店铺简介");
+		
+		//设置ViewPager头部标题
+		String[] type = shop.getType().split("/");
+		if(type.length>=2)
+		{
+			if(type[0].equals("校园服务") && !type[1].equals("宿舍超市"))
+			{
+				titleList.add("活动");
+				titleList.add("社团故事");
+			}
+			else {
+				titleList.add("商品");
+				titleList.add("店铺简介");
+			}
+		}
+		
 		shopViewPagerAdapter = new ViewPagerAdapter(viewList, titleList);
-
 		viewPager.setAdapter(shopViewPagerAdapter);
 		viewPager.setCurrentItem(0);
 
@@ -135,8 +148,6 @@ public class ShopItemActivity extends Activity implements OnClickListener, OnIte
 		goodsListAdapter = new GoodsListAdapter(this, goodsList);
 		BmobQuery<Good> query = new BmobQuery<Good>();
 		query.addWhereEqualTo("shopID", shopID);
-		query.setCachePolicy(CachePolicy.CACHE_ELSE_NETWORK); //
-		// 先从缓存取数据，如果没有，再从网络取。
 		query.setLimit(15); // 限制最多15个结果
 		query.findObjects(this, new FindListener<Good>() {
 

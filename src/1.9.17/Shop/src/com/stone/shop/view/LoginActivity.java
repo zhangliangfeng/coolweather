@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.update.BmobUpdateAgent;
 
 import com.stone.shop.R;
 import com.stone.shop.model.User;
@@ -84,10 +85,11 @@ public class LoginActivity extends Activity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// 初始化 Bmob SDK
-		// 使用时请将第二个参数Application ID替换成你在Bmob服务器端创建的Application ID
-		Bmob.initialize(this, "999848e5d36a83ae049281de8b8ae1a5");
 		setContentView(R.layout.activity_login);
+		
+		//Bmob自动更新组件
+		BmobUpdateAgent.setUpdateOnlyWifi(false);
+		BmobUpdateAgent.update(this);
 		
 		//QQ登陆, 获取实例
 //		mQQAuth = QQAuth.createInstance(APP_ID, this.getApplicationContext()); 

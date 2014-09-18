@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobQuery.CachePolicy;
 import cn.bmob.v3.listener.FindListener;
 
 import com.stone.shop.R;
@@ -85,7 +86,7 @@ public class ShopAllActivity extends Activity implements OnItemClickListener{
 	 */
 	private void getShopsDate() {
 		BmobQuery<Shop> query = new BmobQuery<Shop>();
-		query.order("-updatedAt");
+		query.order("-createdAt");
 		Shop shop = new Shop();
 		shop.setType(type);
 		query.addWhereEqualTo("type", shop.getType());    // 查询当前类型的所有店铺

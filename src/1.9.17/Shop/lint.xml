@@ -4,6 +4,7 @@
         <ignore path="res/layout/activity_home.xml" />
         <ignore path="res/layout/activity_login.xml" />
         <ignore path="res/layout/activity_mine.xml" />
+        <ignore path="res/layout/activity_splash.xml" />
         <ignore path="res/layout/copy_activity_home.xml" />
         <ignore path="res/layout/viewpager_shopinfo.xml" />
     </issue>
@@ -31,10 +32,12 @@
         <ignore path="res/layout/activity_login.xml" />
         <ignore path="res/layout/activity_mine.xml" />
         <ignore path="res/layout/activity_mine_info.xml" />
+        <ignore path="res/layout/activity_mine_info_edit.xml" />
         <ignore path="res/layout/activity_news.xml" />
         <ignore path="res/layout/activity_order.xml" />
         <ignore path="res/layout/activity_reset_psd.xml" />
         <ignore path="res/layout/activity_shop.xml" />
+        <ignore path="res/layout/activity_splash.xml" />
         <ignore path="res/layout/bxt_list_item.xml" />
         <ignore path="res/layout/copy_activity_home.xml" />
         <ignore path="res/layout/dlg_order.xml" />

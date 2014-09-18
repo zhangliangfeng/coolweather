@@ -1,85 +1,91 @@
 # view res/layout/activity_shop_item.xml #generated:12
 -keep class android.support.v4.view.PagerTabStrip { <init>(...); }
 
-# view AndroidManifest.xml #generated:161
+# view AndroidManifest.xml #generated:58
+-keep class cn.bmob.v3.update.UpdateDialogActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:173
 -keep class com.ad.android.sdk.api.AdDownloadService { <init>(...); }
 
-# view AndroidManifest.xml #generated:151
+# view AndroidManifest.xml #generated:163
 -keep class com.ad.android.sdk.api.AdWallActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:156
+# view AndroidManifest.xml #generated:168
 -keep class com.ad.android.sdk.api.AppDetailActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:135
+# view AndroidManifest.xml #generated:147
 -keep class com.stone.shop.view.AboutActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:103
+# view AndroidManifest.xml #generated:115
 -keep class com.stone.shop.view.AwardActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:141
+# view AndroidManifest.xml #generated:153
 -keep class com.stone.shop.view.BXTActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:145
+# view AndroidManifest.xml #generated:157
 -keep class com.stone.shop.view.BXTNewsActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:59
+# view AndroidManifest.xml #generated:71
 -keep class com.stone.shop.view.BaseActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:123
+# view AndroidManifest.xml #generated:135
 -keep class com.stone.shop.view.FeedBackActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:99
+# view AndroidManifest.xml #generated:111
 -keep class com.stone.shop.view.FinderActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:91
+# view AndroidManifest.xml #generated:103
 -keep class com.stone.shop.view.HomeActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:46
+# view AndroidManifest.xml #generated:63
 -keep class com.stone.shop.view.LoginActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:107
+# view AndroidManifest.xml #generated:119
 -keep class com.stone.shop.view.MineActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:111
+# view AndroidManifest.xml #generated:123
 -keep class com.stone.shop.view.MineInfoActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:115
+# view AndroidManifest.xml #generated:127
 -keep class com.stone.shop.view.MineInfoEditActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:119
+# view AndroidManifest.xml #generated:131
 -keep class com.stone.shop.view.MineSoftActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:131
+# view AndroidManifest.xml #generated:143
 -keep class com.stone.shop.view.NewsActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:83
+# view AndroidManifest.xml #generated:95
 -keep class com.stone.shop.view.OrderActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:87
+# view AndroidManifest.xml #generated:99
 -keep class com.stone.shop.view.OrderInfoActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:63
+# view AndroidManifest.xml #generated:75
 -keep class com.stone.shop.view.RegisterActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:55
+# view AndroidManifest.xml #generated:67
 -keep class com.stone.shop.view.ResetPsdActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:75
+# view AndroidManifest.xml #generated:87
 -keep class com.stone.shop.view.SecondTradeActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:67
+# view AndroidManifest.xml #generated:79
 -keep class com.stone.shop.view.ShopActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:71
+# view AndroidManifest.xml #generated:83
 -keep class com.stone.shop.view.ShopAllActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:79
+# view AndroidManifest.xml #generated:91
 -keep class com.stone.shop.view.ShopItemActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:95
+# view AndroidManifest.xml #generated:48
+-keep class com.stone.shop.view.SplashActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:107
 -keep class com.stone.shop.view.WsqActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:127
+# view AndroidManifest.xml #generated:139
 -keep class com.stone.shop.view.old.OldMineActivity { <init>(...); }
 
 # view res/layout/activity_home.xml #generated:87

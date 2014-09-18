@@ -2,15 +2,6 @@ package com.stone.shop.view;
 
 import java.util.List;
 
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.listener.FindListener;
-import cn.bmob.v3.listener.UpdateListener;
-
-import com.stone.date.MessageDef;
-import com.stone.shop.R;
-import com.stone.shop.model.User;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +11,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.listener.FindListener;
+import cn.bmob.v3.listener.UpdateListener;
+
+import com.stone.date.MessageDef;
+import com.stone.shop.R;
+import com.stone.shop.model.User;
 
 /**
  * 修改个人资料卡
@@ -102,35 +101,39 @@ public class MineInfoEditActivity extends Activity {
 	
 	private void saveUserInfo() {
 		if(curUser == null) {
-			toast("curUser为空");
+			toast("请先登录");
+			Intent toLogin = new Intent(MineInfoEditActivity.this, LoginActivity.class);
+			startActivity(toLogin);
 		} else {
-			toast("当前用户为  " + curUser.getUsername());
+			Log.i("当前用户的ID: ", curUser.getObjectId());
+			curUser.setUsername(etUsername.getText().toString());
+			curUser.setSchool(etSchool.getText().toString());
+			curUser.setCademy(etCademy.getText().toString());
+			curUser.setDorPart(etDorPart.getText().toString());
+			curUser.setDorNum(etDorNum.getText().toString());
+			curUser.setPhone(etPhone.getText().toString());
+			curUser.setQQ(etQQ.getText().toString());
+			curUser.update(this, curUser.getObjectId(), new UpdateListener() {
+				
+				@Override
+				public void onSuccess() {
+					Intent back = new Intent(MineInfoEditActivity.this, MineInfoActivity.class);
+					setResult(200, back);  //返回成功码
+					finish();
+					toast("个人资料修改成功");
+				}
+				
+				@Override
+				public void onFailure(int arg0, String arg1) {
+					toast("更新失败");
+				}
+			});
 		}
-		Log.i("当前用户的ID: ", curUser.getObjectId());
-		curUser.setUsername(etUsername.getText().toString());
-		curUser.setSchool(etSchool.getText().toString());
-		curUser.setCademy(etCademy.getText().toString());
-		curUser.setDorPart(etDorPart.getText().toString());
-		curUser.setDorNum(etDorNum.getText().toString());
-		curUser.setPhone(etPhone.getText().toString());
-		curUser.setQQ(etQQ.getText().toString());
-		curUser.update(this, curUser.getObjectId(), new UpdateListener() {
-			
-			@Override
-			public void onSuccess() {
-				toast("更新成功");
-			}
-			
-			@Override
-			public void onFailure(int arg0, String arg1) {
-				toast("更新失败");
-			}
-		});
+		
 	}
 	
 	public void clickSave(View v) {
 		saveUserInfo();
-		finish();
 	}
 	
 	public void clickCancel(View v) {

@@ -4,7 +4,11 @@ import com.stone.shop.R;
 import com.stone.shop.model.BXTNews;
 
 import android.app.Activity;
+import android.opengl.Visibility;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -17,6 +21,16 @@ public class BXTNewsActivity extends Activity {
 	private static final String TAG = "BXTNewsActivity"; 
 	
 	private BXTNews news;
+	
+	private LinearLayout llBXTNewsTopic;
+	private LinearLayout llBXTNewsSpeaker;
+	private LinearLayout llBXTNewsTime;
+	private LinearLayout llBXTNewsLoc;
+	private LinearLayout llBXTNewsHolder1;
+	private LinearLayout llBXTNewsHolder2;
+	private LinearLayout llBXTNewsPoints;
+	private LinearLayout llBXTNewsSpeakerInfo;
+	
 	private TextView tvBXTNewsTitle;
 	private TextView tvBXTNewsTopic;
 	private TextView tvBXTNewsSpeaker;
@@ -48,18 +62,56 @@ public class BXTNewsActivity extends Activity {
 		tvBXTNewsPoints = (TextView) findViewById(R.id.tv_bxt_news_point);
 		tvBXTNewsSpeakerInfo = (TextView) findViewById(R.id.tv_bxt_news_speaker_info);
 		
+		llBXTNewsTopic = (LinearLayout) findViewById(R.id.ll_bxt_news_topic);
+		llBXTNewsSpeaker = (LinearLayout) findViewById(R.id.ll_bxt_news_speaker);
+		llBXTNewsTime = (LinearLayout) findViewById(R.id.ll_bxt_news_time);
+		llBXTNewsLoc = (LinearLayout) findViewById(R.id.ll_bxt_news_loc);
+		llBXTNewsHolder1 = (LinearLayout) findViewById(R.id.ll_bxt_news_holder1);
+		llBXTNewsHolder2 = (LinearLayout) findViewById(R.id.ll_bxt_news_holder2);
+		llBXTNewsPoints = (LinearLayout) findViewById(R.id.ll_bxt_news_point);
+		llBXTNewsSpeakerInfo = (LinearLayout) findViewById(R.id.ll_bxt_news_speaker_info);
+		
 		tvBXTNewsTitle.setText(getIntent().getStringExtra("title"));
-		tvBXTNewsTopic.setText(getIntent().getStringExtra("topic"));
-		tvBXTNewsSpeaker.setText(getIntent().getStringExtra("speaker"));
-		tvBXTNewsTime.setText(getIntent().getStringExtra("time"));
-		tvBXTNewsLoc.setText(getIntent().getStringExtra("location"));
-		tvBXTNewsHolder1.setText(getIntent().getStringExtra("holder1"));
-		tvBXTNewsHolder2.setText(getIntent().getStringExtra("holder2"));
-		tvBXTNewsPoints.setText(getIntent().getStringExtra("points"));
-		tvBXTNewsSpeakerInfo.setText(getIntent().getStringExtra("speakerinfo"));
+		if(getIntent().getStringExtra("topic")==null)
+			llBXTNewsTopic.setVisibility(View.GONE);
+		else
+			tvBXTNewsTopic.setText(getIntent().getStringExtra("topic"));
+		
+		if(getIntent().getStringExtra("speaker")==null)
+			llBXTNewsSpeaker.setVisibility(View.GONE);
+		else
+			tvBXTNewsSpeaker.setText(getIntent().getStringExtra("speaker"));
+		
+		if(getIntent().getStringExtra("time")==null)
+			llBXTNewsTime.setVisibility(View.GONE);
+		else
+			tvBXTNewsTime.setText(getIntent().getStringExtra("time"));
+		
+		if(getIntent().getStringExtra("location")==null)
+			llBXTNewsLoc.setVisibility(View.GONE);
+		else
+			tvBXTNewsLoc.setText(getIntent().getStringExtra("location"));
+		
+		if(getIntent().getStringExtra("holder1")==null)
+			llBXTNewsHolder1.setVisibility(View.GONE);
+		else
+			tvBXTNewsHolder1.setText(getIntent().getStringExtra("holder1"));
+		
+		if(getIntent().getStringExtra("holder2")==null)
+			llBXTNewsHolder2.setVisibility(View.GONE);
+		else
+			tvBXTNewsHolder2.setText(getIntent().getStringExtra("holder2"));
+		
+		if(getIntent().getStringExtra("points")==null)
+			llBXTNewsPoints.setVisibility(View.GONE);
+		else
+			tvBXTNewsPoints.setText(getIntent().getStringExtra("points"));
+		
+		if(getIntent().getStringExtra("speakerinfo")==null)
+			llBXTNewsSpeakerInfo.setVisibility(View.GONE);
+		else
+			tvBXTNewsSpeakerInfo.setText(getIntent().getStringExtra("speakerinfo"));
 		
 	}
 	
-	
-
 }
