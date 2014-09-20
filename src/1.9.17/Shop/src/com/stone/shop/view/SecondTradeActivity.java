@@ -93,7 +93,7 @@ public class SecondTradeActivity extends Activity implements OnItemClickListener
 		    		tradeItemList = object;
 			        // 通知Adapter数据更新
 			    	tradeItemListAdapter.refresh((ArrayList<SecondTrade>) tradeItemList);
-			    	tradeItemListAdapter.notifyDataSetChanged();
+			    	//tradeItemListAdapter.notifyDataSetChanged();
 				}
 		    }
 		    

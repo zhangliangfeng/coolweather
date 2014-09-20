@@ -88,7 +88,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 		setContentView(R.layout.activity_login);
 		
 		//Bmob自动更新组件
-		BmobUpdateAgent.setUpdateOnlyWifi(false);
+		BmobUpdateAgent.setUpdateOnlyWifi(true);
 		BmobUpdateAgent.update(this);
 		
 		//QQ登陆, 获取实例

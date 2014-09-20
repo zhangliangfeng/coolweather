@@ -53,6 +53,7 @@
         <ignore path="res/layout/shop_all_list_item.xml" />
         <ignore path="res/layout/viewpager_shopinfo.xml" />
     </issue>
+    <issue id="InlinedApi" severity="ignore" />
     <issue id="NestedScrolling">
         <ignore path="res/layout/activity_mine.xml" />
     </issue>
