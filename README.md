@@ -2,7 +2,7 @@
 ========
 
 基于Bmob移动后端的资讯平台--HBUT版(Android)
-
+GitHub： https://github.com/Stonekity/Shop
 
 
 
@@ -43,6 +43,8 @@
         
     v1.9.17  ===== src/1.9.17/Shop
         1.添加测试鹰眼广告SDK测试
+        2.添加自动更新组件
+        3.添加博学堂讲座时间提醒
         
 
 
