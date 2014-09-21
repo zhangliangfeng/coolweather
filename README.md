@@ -4,6 +4,7 @@
 基于Bmob移动后端的资讯平台--HBUT版(Android)
 
 GitHub： https://github.com/Stonekity/Shop
+详情请移步：http://stonekity.github.io/Shop/
 
 
 
