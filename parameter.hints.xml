@@ -3,7 +3,10 @@
     <blacklists>
       <blacklist language="Java">
         <added pattern="android.widget.ArrayAdapter.ArrayAdapter(context,resource,objects)" />
+        <added pattern="android.content.Intent.Intent(packageContext,cls)" />
       </blacklist>
+      <blacklist language="Groovy" />
+      <blacklist language="Kotlin" />
     </blacklists>
   </component>
 </application>
